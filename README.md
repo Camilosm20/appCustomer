@@ -54,9 +54,7 @@ Asegúrate de que tu servidor MySQL esté corriendo.
 `CREATE TABLE IF NOT EXISTS customers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    email VARCHAR(255) UNIQUE NOT NULL
 );`
 
 #### Configuración de Variables de Entorno
