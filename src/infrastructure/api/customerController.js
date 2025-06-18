@@ -2,6 +2,8 @@
  * @file Controlador de la API para la gestión de usuarios.
  * @description Maneja las solicitudes HTTP y coordina con los casos de uso para operaciones CRUD de usuarios.
  */
+const CustomerResponseDTO = require('./dtos/customerResponseDTO');
+
 class CustomerController {
     /**
      * @param {object} customerUseCase - Instancia del caso de uso de usuarios.
@@ -21,10 +23,10 @@ class CustomerController {
         try {
             const { name, email } = req.body;
             const customer = await this.customerUseCase.create(name, email);
-            res.status(201).json(customer);
+            res.status(201).json(new CustomerResponseDTO(customer, 'SUCCESS', 'Usuario creado exitosamente.'));
         } catch (error) {
             console.error(error);
-            res.status(400).json({ message: error.message });
+            res.status(400).json(new CustomerResponseDTO(null, 'ERROR', error.message));
         }
     }
 
@@ -38,12 +40,12 @@ class CustomerController {
             const { id } = req.params;
             const customer = await this.customerUseCase.findById(parseInt(id));
             if (!customer) {
-                return res.status(404).json({ message: 'Usuario no encontrado' });
+                return res.status(404).json(new CustomerResponseDTO(null, 'ERROR', 'Usuario no encontrado.'));
             }
-            res.json(customer);
+            res.json(new CustomerResponseDTO(customer, 'SUCCESS', 'Usuario encontrado.'));
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: 'Error interno del servidor' });
+            res.status(500).json(new CustomerResponseDTO(null, 'ERROR', 'Error interno del servidor.'));
         }
     }
 
@@ -55,10 +57,10 @@ class CustomerController {
     async listCustomers(req, res) {
         try {
             const customers = await this.customerUseCase.findAll();
-            res.json(customers);
+            res.json(new CustomerResponseDTO(customers, 'SUCCESS', 'Lista de usuarios recuperada exitosamente.'));
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: 'Error interno del servidor' });
+            res.status(500).json(new CustomerResponseDTO(null, 'ERROR', 'Error interno del servidor.'));
         }
     }
 
@@ -73,12 +75,12 @@ class CustomerController {
             const { name, email } = req.body;
             const customer = await this.customerUseCase.update(parseInt(id), name, email);
             if (!customer) {
-                return res.status(404).json({ message: 'Usuario no encontrado' });
+                return res.status(404).json(new CustomerResponseDTO(null, 'ERROR', 'Usuario no encontrado o sin cambios realizados.'));
             }
-            res.json(customer);
+            res.json(new CustomerResponseDTO(customer, 'SUCCESS', 'Usuario actualizado exitosamente.'));
         } catch (error) {
             console.error(error);
-            res.status(400).json({ message: error.message });
+            res.status(400).json(new CustomerResponseDTO(null, 'ERROR', error.message));
         }
     }
 
@@ -92,12 +94,12 @@ class CustomerController {
             const { id } = req.params;
             const response = await this.customerUseCase.delete(parseInt(id));
             if (!response) {
-                return res.status(404).json({ message: 'Usuario no encontrado' });
+                return res.status(404).json(new CustomerResponseDTO(null, 'ERROR', 'Usuario no encontrado.'));
             }
-            res.status(204).json({ message: 'Usuario borrado con exito.' });
+            res.status(204).json(new CustomerResponseDTO(null, 'SUCCESS', 'Usuario borrado con éxito.'));
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: 'Error interno del servidor' });
+            res.status(500).json(new CustomerResponseDTO(null, 'ERROR', 'Error interno del servidor.'));
         }
     }
 }
