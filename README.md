@@ -18,7 +18,9 @@ Este proyecto está diseñado siguiendo los principios de la **Arquitectura Limp
 **Patrones de Diseño y Arquitectura Aplicados:**
 
 **Arquitectura Limpia:** Promueve la independencia de frameworks, bases de datos y UI. Las dependencias fluyen desde las capas externas hacia las internas.
+
 **Patrón Repositorio:** Abstrae la lógica de acceso a datos de la lógica de negocio, permitiendo cambiar el almacenamiento de datos sin afectar el resto de la aplicación. Se define una interfaz (`customerRepository.js`) y una implementación concreta (`mysqlCustomerRepository.js`).
+
 **Inyección de Dependencias:** Los componentes (controladores, casos de uso) reciben sus dependencias (casos de uso, repositorios) en lugar de crearlas ellos mismos, lo que mejora la modularidad y la probabildad.
 
 ### Configuración del Entorno
