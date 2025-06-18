@@ -80,7 +80,7 @@ La API estará disponible en http://localhost:3000.
 
 ### Endpoints de la API
 
--- POST --> /user/create --> { "name": "John Doe", "email": "john.doe@example.com" }
+-- POST --> /user/create --> { "name": "Camilo", "email": "camilo@gmail.com" }
 
 -- GET --> /user/:id --> NONE
 
