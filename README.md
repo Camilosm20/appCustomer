@@ -32,6 +32,8 @@ Este proyecto está diseñado siguiendo los principios de la **Arquitectura Limp
 
 **Mappers:** Se implementan para traducir entre las entidades de dominio (`Customer.js`) y las entidades de persistencia específicas de la base de datos (`MySQLCustomerEntity.js`), asegurando que las capas internas no conozcan los detalles de la persistencia.
 
+**DTOs:** Se utilizan objetos específicos (`customerResponseDTO.js`) para formatear las respuestas de la API de manera consistente (`data`, `status`, `message`), desacoplando la representación de la respuesta de las entidades de dominio internas.
+
 ---
 
 ## Configuración del Entorno
