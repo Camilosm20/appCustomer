@@ -1,21 +1,28 @@
-### Objetivo del Proyecto
+## Objetivo del Proyecto
 
 El objetivo de este proyecto es desarrollar una API RESTful funcional, aplicando principios de buena programación como la Arquitectura Limpia, gestión de bases de datos (MySQL) y uso de control de versiones (Git).
 
 La API permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre una entidad `Customer` (Cliente).
 
-### Requisitos Técnicos
+---
+
+## Requisitos Técnicos
 
 **Lenguaje:** Node.js
+
 **Framework:** Express.js
+
 **Base de Datos:** MySQL
+
 **Gestor de Paquetes:** npm
 
-### Arquitectura del Proyecto
+## Arquitectura del Proyecto
 
 Este proyecto está diseñado siguiendo los principios de la **Arquitectura Limpia (Clean Architecture)**. La estructura de carpetas refleja las diferentes capas, asegurando una clara separación de responsabilidades, lo que facilita la mantenibilidad, la escalabilidad y la probabildad del código.
 
-**Patrones de Diseño y Arquitectura Aplicados:**
+---
+
+#### Patrones de Diseño y Arquitectura Aplicados:
 
 **Arquitectura Limpia:** Promueve la independencia de frameworks, bases de datos y UI. Las dependencias fluyen desde las capas externas hacia las internas.
 
@@ -23,7 +30,9 @@ Este proyecto está diseñado siguiendo los principios de la **Arquitectura Limp
 
 **Inyección de Dependencias:** Los componentes (controladores, casos de uso) reciben sus dependencias (casos de uso, repositorios) en lugar de crearlas ellos mismos, lo que mejora la modularidad y la probabildad.
 
-### Configuración del Entorno
+---
+
+## Configuración del Entorno
 
 Antes de ejecutar la aplicación, asegúrate de tener instalado lo siguiente:
 
@@ -33,15 +42,15 @@ Antes de ejecutar la aplicación, asegúrate de tener instalado lo siguiente:
 
 **MySQL Server**
 
-### Instalación y Ejecución Local
+## Instalación y Ejecución Local
 
-#### Clonar el Repositorio
+### Clonar el Repositorio
 
 git clone [https://github.com/](https://github.com/)Camilosm20/appCustomer.git
 
 cd appCustomer
 
-#### Configuración de la Base de Datos MySQL
+### Configuración de la Base de Datos MySQL
 
 Asegúrate de que tu servidor MySQL esté corriendo.
 
@@ -57,7 +66,7 @@ Asegúrate de que tu servidor MySQL esté corriendo.
     email VARCHAR(255) UNIQUE NOT NULL
 );`
 
-#### Configuración de Variables de Entorno
+### Configuración de Variables de Entorno
 
 Crea un archivo llamado .env en la raíz del proyecto (al mismo nivel que package.json).
 
@@ -67,7 +76,7 @@ DB_USER=root
 DB_PASSWORD=[password] # Ejemplo: password
 DB_NAME=appCustomer`
 
-#### Instalación de Dependencias
+### Instalación de Dependencias
 
 npm install
 
@@ -90,7 +99,9 @@ La API estará disponible en http://localhost:3000.
 
 -- DELETE --> /user/delete/:id --> NONE
 
+---
+
 ### Hecho por:
 
-Camilo Sepulveda Madrid <3.
+Camilo Sepulveda Madrid.
 
