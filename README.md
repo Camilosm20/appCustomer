@@ -26,14 +26,17 @@ Este proyecto está diseñado siguiendo los principios de la **Arquitectura Limp
 Antes de ejecutar la aplicación, asegúrate de tener instalado lo siguiente:
 
 **Node.js** (versión 18 o superior recomendada)
+
 **npm**
+
 **MySQL Server** (versión 8.0 o superior recomendada)
 
 ### Instalación y Ejecución Local
 
 #### Clonar el Repositorio
 
-git clone [https://github.com/](https://github.com/)[Camilosm20]/appCustomer.git
+git clone [https://github.com/](https://github.com/)Camilosm20/appCustomer.git
+
 cd appCustomer
 
 #### Configuración de la Base de Datos MySQL
@@ -41,8 +44,10 @@ cd appCustomer
 Asegúrate de que tu servidor MySQL esté corriendo.
 
 -- Script de creación de la base de datos y tabla 'customers'
-CREATE DATABASE IF NOT EXIST appCustomer;
-USE appCustomer;
+
+`CREATE DATABASE IF NOT EXIST appCustomer;`
+
+`USE appCustomer;`
 
 `CREATE TABLE IF NOT EXISTS customers (
     id INT AUTO_INCREMENT PRIMARY KEY,
