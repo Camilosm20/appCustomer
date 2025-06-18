@@ -38,7 +38,7 @@ class customerUseCase {
      */
     async findById(id) {
         if (id === null || typeof id === "undefined") {
-            throw new Error("error, id dont defined");
+            throw new Error("error, id no definido");
         }
         return await this.customerRepository.findById(id);
     }
