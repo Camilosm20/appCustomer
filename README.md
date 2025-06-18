@@ -27,11 +27,11 @@ Este proyecto está diseñado siguiendo los principios de la **Arquitectura Limp
 
 Antes de ejecutar la aplicación, asegúrate de tener instalado lo siguiente:
 
-**Node.js** (versión 18 o superior recomendada)
+**Node.js**
 
 **npm**
 
-**MySQL Server** (versión 8.0 o superior recomendada)
+**MySQL Server**
 
 ### Instalación y Ejecución Local
 
